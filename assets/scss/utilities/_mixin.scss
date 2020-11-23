@@ -1,0 +1,133 @@
+/**************************************************/
+//SIZES MIXINS
+/**************************************************/
+@mixin lineHeight($size) {
+  height: $size;
+  line-height: $size;
+}
+
+@mixin box($width, $height) {
+  width: $width;
+  height: $height;
+}
+
+@mixin circle($size, $color) {
+  width: $size;
+  height: $size;
+  border-radius: $size;
+  background-color: $color;
+}
+
+/**************************************************/
+//LAYOUT MIXINS
+/**************************************************/
+@mixin flex($direction, $vertical, $horizontal) {
+  display: flex;
+  justify-content: $horizontal;
+  align-items: $vertical;
+  flex-direction: $direction;
+}
+
+@mixin center-vertically {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  @include prefix(transform, translate(-50%, -50%), "webkit" "ms");
+}
+
+@mixin screen($size) {
+  $desktop: "(min-width: 1301px)";
+  $laptops: "(min-width: 1025px) and (max-width: 1300px)";
+  $tablet: "(min-width: 768px) and (max-width: 1023px)";
+  $mobile: "(max-width: 767px)";
+  @if $size == desktop {
+    @media only screen and #{$desktop} {
+      @content;
+    }
+  } @else if $size == laptops {
+    @media only screen and #{$laptops} {
+      @content;
+    }
+  } @else if $size == tablet {
+    @media only screen and #{$tablet} {
+      @content;
+    }
+  } @else if $size == mobile {
+    @media only screen and #{$mobile} {
+      @content;
+    }
+  } @else {
+    @media only screen and #{$size} {
+      @content;
+    }
+  }
+}
+
+@mixin generate-grid($columns, $size: "") {
+  @for $i from 1 through $columns {
+    $width: calc(100% / (#{$columns} / #{$i}));
+    @if ($size == "") {
+      .col-#{$i}-#{$columns} {
+        width: $width;
+      }
+      .col-offset-#{$i}-#{$columns} {
+        margin-left: $width;
+      }
+    } @else {
+      .col-#{$size}-#{$i}-#{$columns} {
+        width: $width;
+      }
+      .col-#{$size}-offset-#{$i}-#{$columns} {
+        margin-left: $width;
+      }
+    }
+  }
+}
+
+/**************************************************/
+//OTHER MIXINS
+/**************************************************/
+
+@mixin prefix($property, $value, $vendors: webkit moz ms o, $default: true) {
+  @if $vendors {
+    @each $vendor in $vendors {
+      #{"-" + $vendor + "-" + $property}: #{$value};
+    }
+  }
+  @if $default {
+    #{$property}: #{$value};
+  }
+}
+
+@mixin clearfixMixin {
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+@mixin opacity($opacity) {
+  opacity: $opacity;
+  $opacity-ie: $opacity * 100;
+  filter: alpha(opacity = $opacity-ie); //IE8
+}
+
+@mixin gradient($start-color, $end-color, $orientation) {
+  background: $start-color;
+  @if $orientation == "vertical" {
+    background: -webkit-linear-gradient(top, $start-color, $end-color);
+    background: linear-gradient(to bottom, $start-color, $end-color);
+  } @else if $orientation == "horizontal" {
+    background: -webkit-linear-gradient(left, $start-color, $end-color);
+    background: linear-gradient(to right, $start-color, $end-color);
+  } @else {
+    background: -webkit-radial-gradient(
+      center,
+      ellipse cover,
+      $start-color,
+      $end-color
+    );
+    background: radial-gradient(ellipse at center, $start-color, $end-color);
+  }
+}
