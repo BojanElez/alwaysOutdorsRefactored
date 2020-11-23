@@ -1,2 +1,114 @@
 .header {
+  background-color: $theme-color-1;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100vw;
+  z-index: 2;
+  overflow: hidden;
+  padding: 0 10px;
+  &__container {
+    margin: 0 auto;
+    max-width: 1200px;
+    display: grid;
+    @include screen("tablet") {
+      grid-template-columns: 30% 55% 15%;
+    }
+    @include screen("laptops") {
+      grid-template-columns: 20% 70% 10%;
+    }
+    @include screen("desktop") {
+      grid-template-columns: 20% 70% 10%;
+    }
+    &__logo {
+      @include flex(column, center, center);
+      height: 45px;
+      @include screen("tablet") {
+        @include lineHeight(82px);
+      }
+      @include screen("laptops") {
+        @include lineHeight(82px);
+      }
+      @include screen("desktop") {
+        @include lineHeight(82px);
+      }
+      .logo {
+        width: 100%;
+        display: flex;
+        text-decoration: none;
+        font-weight: 600;
+        @include screen("tablet") {
+          @include lineHeight(82px);
+        }
+        @include screen("laptops") {
+          @include lineHeight(82px);
+        }
+        @include screen("desktop") {
+          @include lineHeight(82px);
+        }
+        &__text {
+          @include lineHeight(45px);
+          @include screen("tablet") {
+            @include lineHeight(82px);
+          }
+          @include screen("laptops") {
+            @include lineHeight(82px);
+          }
+          @include screen("desktop") {
+            @include lineHeight(82px);
+          }
+          color: $white;
+          text-decoration: none;
+          text-transform: uppercase;
+          margin-left: 10px;
+        }
+      }
+    }
+    &__search {
+      @include lineHeight(45px);
+      @include screen("laptops") {
+        height: 82px;
+        width: 100%;
+        display: flex;
+        justify-content: flex-end;
+      }
+      @include screen("desktop") {
+        height: 82px;
+        width: 100%;
+        display: flex;
+        justify-content: flex-end;
+      }
+      width: 100%;
+      .icon {
+        @include lineHeight(45px);
+        @include screen("tablet") {
+          @include lineHeight(82px);
+        }
+        @include screen("laptops") {
+          @include lineHeight(82px);
+        }
+        @include screen("desktop") {
+          @include lineHeight(82px);
+        }
+        margin-right: 5px;
+        display: flex;
+        float: left;
+      }
+      .search-text {
+        @include screen("tablet") {
+          @include lineHeight(82px);
+        }
+        @include screen("laptops") {
+          @include lineHeight(82px);
+        }
+        @include screen("desktop") {
+          @include lineHeight(82px);
+        }
+        font-size: 14px;
+        color: $white;
+        text-transform: capitalize;
+      }
+    }
+  }
 }

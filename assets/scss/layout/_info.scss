@@ -1,0 +1,72 @@
+.main {
+  .info {
+    width: 100%;
+    position: relative;
+    top: 364px;
+    @include screen("laptops") {
+      top: 82px;
+    }
+    @include screen("desktop") {
+      top: 82px;
+    }
+    &__container {
+      max-width: 1200px;
+      margin: 0 auto;
+      &__headline {
+        height: 170px;
+        position: relative;
+        h2 {
+          @include center-vertically;
+          color: $theme-color-1;
+          text-transform: uppercase;
+          font-size: 30px;
+        }
+      }
+      &__banner {
+        height: 350px;
+        max-width: 1200px;
+        display: grid;
+        @include screen("laptops") {
+          grid-template-columns: 50% 50%;
+        }
+        @include screen("desktop") {
+          grid-template-columns: 50% 50%;
+        }
+        .banner-text-holder {
+          max-width: 500px;
+          padding-right: 40px;
+          margin: 0 auto;
+          width: 95%;
+          @include flex(column, flex-end, space-between);
+          .first-news {
+            h3 {
+              font-size: 18px;
+              padding-bottom: 25px;
+              color: $theme-color-1;
+            }
+            p {
+              font-size: 12px;
+              padding-bottom: 25px;
+            }
+          }
+        }
+        .banner-image-holder {
+          margin: 0 auto;
+          width: 95%;
+          img {
+            width: 300px;
+            height: 175px;
+            @include screen("laptops") {
+              width: 600px;
+              height: 350px;
+            }
+            @include screen("desktop") {
+              width: 600px;
+              height: 350px;
+            }
+          }
+        }
+      }
+    }
+  }
+}

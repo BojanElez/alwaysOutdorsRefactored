@@ -1,2 +1,74 @@
 .footer {
+  width: 100%;
+  &__container {
+    &__top {
+      background-color: $theme-color-2;
+      height: 220px;
+      @include flex(column, center, center);
+      .nav-bottom {
+        padding-top: 50px;
+        &__menu {
+          @include flex(row, center, center);
+          .item {
+            font-size: 14px;
+            width: 100px;
+            a {
+              color: $white;
+              text-transform: capitalize;
+              text-decoration: none;
+            }
+          }
+        }
+      }
+      .icons {
+        padding-top: 50px;
+        @include flex(row, center, center);
+        &__item {
+          border-radius: 42px;
+          width: 42px;
+          height: 42px;
+          background: $theme-color-4;
+          img {
+            border-radius: 32px;
+            width: 32px;
+            height: 32px;
+            padding: 5px 0 0 5px;
+          }
+          :nth-child(2) {
+            margin: 0 10px;
+          }
+        }
+      }
+    }
+    &__bottom {
+      background-color: $theme-color-3;
+      height: 60px;
+      .conteiner {
+        max-width: 1200px;
+        margin: 0 auto;
+        .items {
+          height: 60px;
+          width: 100%;
+          @include flex(row, center, space-between);
+          &__copyright {
+            height: 60px;
+            color: $white;
+          }
+          &__logo {
+            height: 60px;
+            a.logo {
+              margin-top: 10px;
+              margin-right: 10px;
+              text-decoration: none;
+            }
+            &__text {
+              margin-top: 10px;
+              margin-right: 10px;
+              color: $white;
+            }
+          }
+        }
+      }
+    }
+  }
 }

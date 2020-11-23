@@ -1,4 +1,68 @@
 .header {
-  &__navigation {
+  &__container {
+    margin: 0 auto;
+    display: grid;
+    &__navigation {
+      width: 100vw;
+      height: 180px;
+      @include screen("laptops") {
+        height: 82px;
+        width: 100%;
+      }
+      @include screen("desktop") {
+        height: 82px;
+        width: 100%;
+      }
+      .nav {
+        &__menu {
+          padding: 0;
+          margin: 0;
+          display: flex;
+          flex-direction: column;
+          justify-items: flex-start;
+          @include screen("tablet") {
+            @include lineHeight(82px);
+            height: 82px;
+          }
+          @include screen("laptops") {
+            @include lineHeight(82px);
+            height: 82px;
+            justify-items: center;
+            margin-left: 250px;
+            flex-direction: row;
+          }
+          @include screen("desktop") {
+            @include lineHeight(82px);
+            height: 82px;
+            justify-items: center;
+            margin-left: 400px;
+            flex-direction: row;
+          }
+
+          .item {
+            @include lineHeight(45px);
+            @include screen("laptops") {
+              @include lineHeight(82px);
+              height: 82px;
+              margin: 0;
+            }
+            @include screen("desktop") {
+              @include lineHeight(82px);
+              margin: 0;
+            }
+            list-style: none;
+            color: $white;
+            min-width: 130px;
+            font-size: 14px;
+            text-transform: capitalize;
+            cursor: pointer;
+            a {
+              color: $white;
+              text-decoration: none;
+            }
+          }
+        }
+      }
+    }
   }
 }
