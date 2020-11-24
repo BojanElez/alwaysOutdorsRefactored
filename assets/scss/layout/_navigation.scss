@@ -5,7 +5,7 @@
     &__navigation {
       width: 100vw;
       height: 180px;
-      @include screen("laptops") {
+      @include screen("tabletPlus") {
         height: 82px;
         width: 100%;
       }
@@ -28,14 +28,14 @@
             @include lineHeight(82px);
             height: 82px;
             justify-items: center;
-            margin-left: 250px;
+            margin-left: 150px;
             flex-direction: row;
           }
           @include screen("desktop") {
             @include lineHeight(82px);
             height: 82px;
             justify-items: center;
-            margin-left: 400px;
+            margin-left: 200px;
             flex-direction: row;
           }
 
@@ -53,7 +53,7 @@
             list-style: none;
             color: $white;
             min-width: 130px;
-            font-size: 14px;
+            font-size: 1.4rem;
             text-transform: capitalize;
             cursor: pointer;
             a {

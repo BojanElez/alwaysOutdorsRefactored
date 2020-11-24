@@ -2,7 +2,7 @@
   .info {
     width: 100%;
     position: relative;
-    top: 364px;
+    top: 264px;
     @include screen("laptops") {
       top: 82px;
     }
@@ -19,7 +19,14 @@
           @include center-vertically;
           color: $theme-color-1;
           text-transform: uppercase;
-          font-size: 30px;
+          font-size: 3rem;
+          width: 100%;
+          text-align: left;
+          max-width: 600px;
+          @include screen("tabletPlus") {
+            text-align: center;
+            max-width: 1200px;
+          }
         }
       }
       &__banner {
@@ -33,19 +40,25 @@
           grid-template-columns: 50% 50%;
         }
         .banner-text-holder {
-          max-width: 500px;
+          max-width: 600px;
           padding-right: 40px;
           margin: 0 auto;
           width: 95%;
           @include flex(column, flex-end, space-between);
+          @include screen("laptops") {
+            margin: 0;
+          }
+          @include screen("desktop") {
+            margin: 0;
+          }
           .first-news {
             h3 {
-              font-size: 18px;
+              font-size: 1.8rem;
               padding-bottom: 25px;
               color: $theme-color-1;
             }
             p {
-              font-size: 12px;
+              font-size: 1.2rem;
               padding-bottom: 25px;
             }
           }
@@ -53,12 +66,22 @@
         .banner-image-holder {
           margin: 0 auto;
           width: 95%;
+          max-width: 600px;
+          @include screen("laptops") {
+            max-width: 1200px;
+          }
+          @include screen("desktop") {
+            width: 600px;
+            height: 350px;
+            max-width: 1000px;
+          }
           img {
-            width: 300px;
-            height: 175px;
+            width: 100%;
+            @include screen("tablet") {
+              max-width: 600px;
+            }
             @include screen("laptops") {
-              width: 600px;
-              height: 350px;
+              width: 100%;
             }
             @include screen("desktop") {
               width: 600px;
