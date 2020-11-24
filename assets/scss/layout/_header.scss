@@ -105,6 +105,9 @@
         &:focus {
           outline: none;
         }
+        @include screen("tablet") {
+          margin-top: 30px;
+        }
       }
     }
   }

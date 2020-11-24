@@ -152,6 +152,9 @@ div.page {
           font-family: inherit; }
         .header__container__search .search-text:focus {
           outline: none; }
+        @media only screen and (min-width: 768px) and (max-width: 900px) {
+          .header__container__search .search-text {
+            margin-top: 30px; } }
 
 .header__container {
   margin: 0 auto;
@@ -175,24 +178,22 @@ div.page {
       justify-items: flex-start; }
       @media only screen and (min-width: 768px) and (max-width: 900px) {
         .header__container__navigation .nav__menu {
-          height: 82px;
-          line-height: 82px;
-          height: 82px; } }
+          margin-left: 20px; } }
       @media only screen and (min-width: 901px) and (max-width: 1198px) {
         .header__container__navigation .nav__menu {
-          height: 82px;
-          line-height: 82px;
-          height: 82px;
-          justify-items: center;
-          margin-left: 150px;
-          flex-direction: row; } }
+          margin-left: 100px; } }
       @media only screen and (min-width: 1199px) {
+        .header__container__navigation .nav__menu {
+          margin-left: 150px; } }
+      @media only screen and (min-width: 768px) and (max-width: 900px) {
+        .header__container__navigation .nav__menu {
+          margin-left: 50px; } }
+      @media only screen and (min-width: 768px) {
         .header__container__navigation .nav__menu {
           height: 82px;
           line-height: 82px;
           height: 82px;
           justify-items: center;
-          margin-left: 200px;
           flex-direction: row; } }
       .header__container__navigation .nav__menu .item {
         height: 45px;
@@ -203,16 +204,15 @@ div.page {
         font-size: 1.4rem;
         text-transform: capitalize;
         cursor: pointer; }
-        @media only screen and (min-width: 901px) and (max-width: 1198px) {
+        @media only screen and (min-width: 768px) and (max-width: 900px) {
+          .header__container__navigation .nav__menu .item {
+            margin-left: 50px;
+            max-width: 130px; } }
+        @media only screen and (min-width: 768px) {
           .header__container__navigation .nav__menu .item {
             height: 82px;
             line-height: 82px;
             height: 82px;
-            margin: 0; } }
-        @media only screen and (min-width: 1199px) {
-          .header__container__navigation .nav__menu .item {
-            height: 82px;
-            line-height: 82px;
             margin: 0; } }
         .header__container__navigation .nav__menu .item a {
           color: #fff;
@@ -310,10 +310,7 @@ div.page {
   width: 100%;
   position: relative;
   top: 264px; }
-  @media only screen and (min-width: 901px) and (max-width: 1198px) {
-    .main .info {
-      top: 82px; } }
-  @media only screen and (min-width: 1199px) {
+  @media only screen and (min-width: 768px) {
     .main .info {
       top: 82px; } }
   .main .info__container {
@@ -398,17 +395,10 @@ div.page {
 
 .main .adventure {
   margin-top: 600px;
-  height: 250vh;
   background: #1e5d69;
   opacity: 0.8;
   clip-path: polygon(0 12%, 100% 0%, 100% 88%, 0% 100%);
-  background-position: center;
-  display: flex;
-  position: relative; }
-  @media only screen and (min-width: 768px) {
-    .main .adventure {
-      margin-top: 110px;
-      height: 100vh; } }
+  background-position: center; }
   @media only screen and (min-width: 768px) {
     .main .adventure {
       background: url("../../../assets/images/img-bg-adventure.jpg");
@@ -416,15 +406,15 @@ div.page {
       background-size: 100% 100%;
       background-attachment: fixed; } }
   .main .adventure__container {
-    width: 1200px;
     margin: 0 auto;
     height: 100%;
-    display: flex;
-    align-items: center; }
+    display: grid;
+    grid-template-columns: 100%;
+    padding-bottom: 80px; }
+    @media only screen and (min-width: 768px) {
+      .main .adventure__container {
+        max-width: 1200px; } }
     .main .adventure__container .headline {
-      position: absolute;
-      top: 200px;
-      left: 0;
       width: 100%;
       text-align: center;
       font-size: 30px;
@@ -441,17 +431,24 @@ div.page {
         padding-top: 40px; }
     .main .adventure__container .card {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(242px, 1fr));
       grid-row-gap: 50px;
       grid-column-gap: 80px;
       width: 100%; }
+      @media (min-width: 600px) {
+        .main .adventure__container .card .cards {
+          grid-template-columns: repeat(2, 1fr); } }
       @media only screen and (min-width: 768px) {
         .main .adventure__container .card {
-          margin-top: 0;
           justify-content: space-between;
           grid-template-areas: "card card card card";
           grid-auto-columns: 242px;
           margin: 0; } }
+      @media only screen and (min-width: 901px) and (max-width: 1198px) {
+        .main .adventure__container .card {
+          top: 10px; } }
+      @media only screen and (min-width: 1199px) {
+        .main .adventure__container .card {
+          top: 10px; } }
       .main .adventure__container .card__item {
         width: 240px;
         height: 300px;
@@ -482,9 +479,12 @@ div.page {
   left: 0;
   background: linear-gradient(to right, #049bba, #b5c1c4);
   width: 100%;
-  height: 250vh;
+  height: 300vh;
   opacity: 0.7;
   z-index: 1; }
+  @media only screen and (min-width: 768px) and (max-width: 900px) {
+    .main .adventure-bcg-overlay {
+      height: 300vh; } }
   @media only screen and (min-width: 901px) and (max-width: 1198px) {
     .main .adventure-bcg-overlay {
       height: 100vh; } }
