@@ -54,7 +54,7 @@ div.page {
         max-width: 1200px; } }
     @media only screen and (min-width: 768px) and (max-width: 900px) {
       .header__container {
-        grid-template-columns: 30% 55% 15%; } }
+        grid-template-columns: 105px 540px 105px; } }
     @media only screen and (min-width: 901px) and (max-width: 1198px) {
       .header__container {
         grid-template-columns: 20% 70% 10%; } }
@@ -405,50 +405,66 @@ div.page {
       background-repeat: no-repeat;
       background-size: 100% 100%;
       background-attachment: fixed; } }
+  @media only screen and (min-width: 768px) and (max-width: 900px) {
+    .main .adventure {
+      height: 120vh; } }
+  @media only screen and (min-width: 901px) and (max-width: 1198px) {
+    .main .adventure {
+      height: 100vh; } }
+  @media only screen and (min-width: 1199px) {
+    .main .adventure {
+      height: 90vh; } }
   .main .adventure__container {
     margin: 0 auto;
     height: 100%;
     display: grid;
     grid-template-columns: 100%;
-    padding-bottom: 80px; }
+    padding-bottom: 200px; }
     @media only screen and (min-width: 768px) {
       .main .adventure__container {
-        max-width: 1200px; } }
+        max-width: 1200px;
+        padding-bottom: 80px;
+        margin: 0; } }
+    @media only screen and (min-width: 768px) and (max-width: 900px) {
+      .main .adventure__container {
+        width: 90%;
+        margin: 0 auto; } }
+    @media only screen and (min-width: 901px) and (max-width: 1198px) {
+      .main .adventure__container {
+        margin: 0 auto; } }
     .main .adventure__container .headline {
       width: 100%;
       text-align: center;
       font-size: 30px;
+      padding-top: 180px;
       margin-bottom: 80px;
       color: #fff;
       z-index: 2; }
-      @media only screen and (min-width: 901px) and (max-width: 1198px) {
+      @media only screen and (min-width: 768px) {
         .main .adventure__container .headline {
-          top: 120px; } }
-      @media only screen and (min-width: 1199px) {
-        .main .adventure__container .headline {
-          top: 130px; } }
+          padding-top: 100px; } }
       .main .adventure__container .headline h2 {
         padding-top: 40px; }
     .main .adventure__container .card {
       display: grid;
       grid-row-gap: 50px;
       grid-column-gap: 80px;
+      grid-auto-columns: 242px;
       width: 100%; }
-      @media (min-width: 600px) {
-        .main .adventure__container .card .cards {
-          grid-template-columns: repeat(2, 1fr); } }
       @media only screen and (min-width: 768px) {
         .main .adventure__container .card {
           justify-content: space-between;
-          grid-template-areas: "card card card card";
-          grid-auto-columns: 242px;
-          margin: 0; } }
+          margin: 0;
+          top: 10px; } }
+      @media only screen and (min-width: 768px) and (max-width: 900px) {
+        .main .adventure__container .card {
+          grid-template-columns: repeat(2, 1fr); } }
       @media only screen and (min-width: 901px) and (max-width: 1198px) {
         .main .adventure__container .card {
-          top: 10px; } }
+          grid-template-columns: repeat(3, 1fr); } }
       @media only screen and (min-width: 1199px) {
         .main .adventure__container .card {
-          top: 10px; } }
+          grid-template-columns: repeat(4, 1fr); } }
       .main .adventure__container .card__item {
         width: 240px;
         height: 300px;
@@ -479,18 +495,12 @@ div.page {
   left: 0;
   background: linear-gradient(to right, #049bba, #b5c1c4);
   width: 100%;
-  height: 300vh;
   opacity: 0.7;
+  height: 500vh;
   z-index: 1; }
-  @media only screen and (min-width: 768px) and (max-width: 900px) {
+  @media only screen and (min-width: 768px) {
     .main .adventure-bcg-overlay {
       height: 300vh; } }
-  @media only screen and (min-width: 901px) and (max-width: 1198px) {
-    .main .adventure-bcg-overlay {
-      height: 100vh; } }
-  @media only screen and (min-width: 1199px) {
-    .main .adventure-bcg-overlay {
-      height: 100vh; } }
 
 .most-popular__container {
   max-width: 1200px;

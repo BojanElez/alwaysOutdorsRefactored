@@ -16,7 +16,7 @@
       max-width: 1200px;
     }
     @include screen("tablet") {
-      grid-template-columns: 30% 55% 15%;
+      grid-template-columns: 105px 540px 105px;
     }
     @include screen("laptops") {
       grid-template-columns: 20% 70% 10%;

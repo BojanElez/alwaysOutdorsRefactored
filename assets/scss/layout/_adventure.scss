@@ -11,28 +11,43 @@
       background-size: 100% 100%;
       background-attachment: fixed;
     }
+    @include screen("tablet") {
+      height: 120vh;
+    }
+    @include screen("laptops") {
+      height: 100vh;
+    }
+    @include screen("desktop") {
+      height: 90vh;
+    }
     &__container {
       margin: 0 auto;
       height: 100%;
       display: grid;
       grid-template-columns: 100%;
-      padding-bottom: 80px;
+      padding-bottom: 200px;
       @include screen("tabletPlus") {
         max-width: 1200px;
+        padding-bottom: 80px;
+        margin: 0;
+      }
+      @include screen("tablet") {
+        width: 90%;
+        margin: 0 auto;
+      }
+      @include screen("laptops") {
+        margin: 0 auto;
       }
       .headline {
         width: 100%;
         text-align: center;
         font-size: 30px;
-        padding-top: 20px;
+        padding-top: 180px;
         margin-bottom: 80px;
         color: #fff;
         z-index: 2;
-        @include screen("laptops") {
-          top: 120px;
-        }
-        @include screen("desktop") {
-          top: 130px;
+        @include screen("tabletPlus") {
+          padding-top: 100px;
         }
         h2 {
           padding-top: 40px;
@@ -40,25 +55,23 @@
       }
       .card {
         display: grid;
-        @media (min-width: 600px) {
-          .cards {
-            grid-template-columns: repeat(2, 1fr);
-          }
-        }
         grid-row-gap: 50px;
         grid-column-gap: 80px;
+        grid-auto-columns: 242px;
         width: 100%;
         @include screen("tabletPlus") {
           justify-content: space-between;
-          grid-template-areas: "card card card card";
-          grid-auto-columns: 242px;
           margin: 0;
+          top: 10px;
+        }
+        @include screen("tablet") {
+          grid-template-columns: repeat(2, 1fr);
         }
         @include screen("laptops") {
-          top: 10px;
+          grid-template-columns: repeat(3, 1fr);
         }
         @include screen("desktop") {
-          top: 10px;
+          grid-template-columns: repeat(4, 1fr);
         }
         &__item {
           width: 240px;
@@ -97,17 +110,11 @@
     left: 0;
     background: linear-gradient(to right, rgb(4, 155, 186), rgb(181, 193, 196));
     width: 100%;
-    height: 300vh;
     opacity: 0.7;
-    z-index: 1;
-    @include screen("tablet") {
+    height: 500vh;
+    @include screen("tabletPlus") {
       height: 300vh;
     }
-    @include screen("laptops") {
-      height: 100vh;
-    }
-    @include screen("desktop") {
-      height: 100vh;
-    }
+    z-index: 1;
   }
 }
