@@ -419,17 +419,17 @@ div.page {
     height: 100%;
     display: grid;
     grid-template-columns: 100%;
-    padding-bottom: 200px; }
+    padding-bottom: 200px;
+    max-width: 80%; }
     @media only screen and (min-width: 768px) {
       .main .adventure__container {
         max-width: 1200px;
-        padding-bottom: 80px;
-        margin: 0; } }
+        padding-bottom: 80px; } }
     @media only screen and (min-width: 768px) and (max-width: 900px) {
       .main .adventure__container {
         width: 90%;
         margin: 0 auto; } }
-    @media only screen and (min-width: 901px) and (max-width: 1198px) {
+    @media only screen and (min-width: 1199px) {
       .main .adventure__container {
         margin: 0 auto; } }
     .main .adventure__container .headline {
@@ -456,9 +456,13 @@ div.page {
           justify-content: space-between;
           margin: 0;
           top: 10px; } }
-      @media only screen and (min-width: 768px) and (max-width: 900px) {
+      @media only screen and (min-width: 600px) {
         .main .adventure__container .card {
           grid-template-columns: repeat(2, 1fr); } }
+      @media only screen and (min-width: 768px) and (max-width: 900px) {
+        .main .adventure__container .card {
+          grid-template-columns: repeat(3, 1fr);
+          grid-column-gap: 30px; } }
       @media only screen and (min-width: 901px) and (max-width: 1198px) {
         .main .adventure__container .card {
           grid-template-columns: repeat(3, 1fr); } }

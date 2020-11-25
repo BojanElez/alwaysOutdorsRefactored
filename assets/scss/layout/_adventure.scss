@@ -26,16 +26,16 @@
       display: grid;
       grid-template-columns: 100%;
       padding-bottom: 200px;
+      max-width: 80%;
       @include screen("tabletPlus") {
         max-width: 1200px;
         padding-bottom: 80px;
-        margin: 0;
       }
       @include screen("tablet") {
         width: 90%;
         margin: 0 auto;
       }
-      @include screen("laptops") {
+      @include screen("desktop") {
         margin: 0 auto;
       }
       .headline {
@@ -64,8 +64,12 @@
           margin: 0;
           top: 10px;
         }
-        @include screen("tablet") {
+        @media only screen and (min-width: 600px) {
           grid-template-columns: repeat(2, 1fr);
+        }
+        @include screen("tablet") {
+          grid-template-columns: repeat(3, 1fr);
+          grid-column-gap: 30px;
         }
         @include screen("laptops") {
           grid-template-columns: repeat(3, 1fr);
